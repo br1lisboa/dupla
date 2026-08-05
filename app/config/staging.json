@@ -1,0 +1,6 @@
+{
+  "env": "staging",
+  "supabaseUrl": "https://REPLACE-ME.supabase.co",
+  "supabaseAnonKey": "REPLACE-ME",
+  "sentryDsn": "REPLACE-ME"
+}

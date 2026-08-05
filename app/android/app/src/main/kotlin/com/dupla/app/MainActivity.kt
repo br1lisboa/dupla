@@ -1,4 +1,4 @@
-package com.dupla.dupla
+package com.dupla.app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -43,3 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Environment configuration
+# Production credentials never live in the repository. CI injects this file at
+# release build time. See config/prod.example.json for the expected shape.
+/config/prod.json

@@ -1,0 +1,6 @@
+{
+  "env": "",
+  "supabaseUrl": "",
+  "supabaseAnonKey": "",
+  "sentryDsn": ""
+}

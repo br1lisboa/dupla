@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.dupla.dupla"
+    namespace = "com.dupla.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -15,8 +15,9 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.dupla.dupla"
+        // Production identity. Immutable once published to Play Store.
+        // The local and staging flavors derive from it via applicationIdSuffix.
+        applicationId = "com.dupla.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         // Android 8.0. Raised from the Flutter default to drop version-conditional code paths.
@@ -24,6 +25,25 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+    }
+
+    // Single dimension: the three flavors are environments, never combined.
+    flavorDimensions += "env"
+
+    // Visible name and launcher icon per flavor live in each flavor's source set,
+    // under src/<flavor>/res/.
+    productFlavors {
+        create("local") {
+            dimension = "env"
+            applicationIdSuffix = ".local"
+        }
+        create("staging") {
+            dimension = "env"
+            applicationIdSuffix = ".staging"
+        }
+        create("prod") {
+            dimension = "env"
+        }
     }
 
     buildTypes {
